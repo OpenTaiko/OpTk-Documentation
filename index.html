@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+    <head>
+        <title>OpenTaiko Documentation</title>
+        <link href="./src/style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <h1>OpenTaiko Documentation</h1>
+            <h2>Written for Version 0.6.0.0</h2>
+        </header>
+        <nav>
+            <h2>Navigation</h2>
+                <a href="#intro" class="h1">Introduction</a>
+
+                <a href="#general" class="h1">General</a>
+
+                <a href="#gameplay" class="h1">Gameplay</a>
+
+                <a href="#charting" class="h1">Charting</a>
+                <a href="#note-types" class="h2">Note Types</a>
+                <a href="#taiko-notes" class="h3">Taiko Notes</a>
+                <a href="#konga-notes" class="h3">Konga Notes</a>
+                <a href="#miscellaneous-notes" class="h3">Miscellaneous Notes</a>
+
+                <a href="#skinning" class="h1">Skinning & Customization</a>
+                <a href="#lua-scripting" class="h2">Lua Scripting</a>
+                <a href="#calling-functions" class="h3">Calling Functions</a>
+                <a href="#receiving-functions" class="h3">Receiving Functions</a>
+                <a href="#variables" class="h3">Variables</a>
+
+                <a href="#faq" class="h1">Frequently Asked Questions</a>
+        </nav>
+        <content>
+
+            <h1 id="intro">Introduction</h1>
+                <p>Run OpenTaiko.exe. That is the introduction.</p>
+
+            <h1 id="general">General</h1>
+                <p>Go to Taiko Mode.</p>
+
+            <h1 id="gameplay">Gameplay</h1>
+                <p>Hit the drum.</p>
+
+            <h1 id="charting">Charting</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos magnam quia veniam adipisci aliquid aliquam accusantium veritatis, iusto facilis harum maxime at unde officia atque temporibus, optio, quasi quidem aspernatur.</p>
+
+                <h2 id="note-types">Note Types</h2>
+                <p>There are many notes supported by OpenTaiko. Some are commonly used in every chart, while others may only be exclusive to other modes, or only seen in uncommon cases.</p>
+
+                    <h3 id="taiko-notes">Taiko Notes</h3>
+                    <p>Listed here are common note types used in Taiko mode.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Empty</td>
+                                <td>
+                                    <p>Empty space</p>
+                                    <p>Essential in spacing apart notes, as well as assisting in creating complex patterns.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Don</td>
+                                <td>Red note</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ka</td>
+                                <td>Blue note</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Don (Large)</td>
+                                <td>Large red note</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Ka (Large)</td>
+                                <td>Large blue note</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Start of Drumroll</td>
+                                <td>
+                                    <p>Drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Start of Drumroll (Large)</td>
+                                <td>
+                                    <p>Large drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Start of Balloon</td>
+                                <td>
+                                    <p>Balloon</p>
+                                    <p>Marks the beginning of a balloon. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Similar to the drumroll, but must be hit a certain amount within a time limit to be cleared. Balloon value is specified by the BALLOON tag.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>End of long note</td>
+                                <td>Marks the end of any long note.</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Start of Kusudama</td>
+                                <td>
+                                    <p>Large balloon</p>
+                                    <p>Marks the beginning of a kusudama. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Similar to the drumroll, but must be hit a certain amount within a time limit to be cleared. Kusudama value is specified by the BALLOON tag.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>Don (Large - Both)</td>
+                                <td>
+                                    <p>Large red note</p>
+                                    <p>Displays connected hands when playing a chart in multiplayer & the note appear aligned together.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>Ka (Large - Both)</td>
+                                <td>
+                                    <p>Large blue note</p>
+                                    <p>Displays connected hands when playing a chart in multiplayer & the note appear aligned together.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 id="konga-notes">Konga Notes</h3>
+                    <p>Listed here are common note types used in Konga mode.</p>
+                    <p>Many of them are already used in Taiko mode, but a few are exclusively used in this gamemode.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Empty</td>
+                                <td>
+                                    <p>Empty space</p>
+                                    <p>Essential in spacing apart notes, as well as assisting in creating complex patterns.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Right</td>
+                                <td>Right note</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Left</td>
+                                <td>Left note</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Double</td>
+                                <td>Double note</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Clap</td>
+                                <td>Clap note</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Start of Right Drumroll</td>
+                                <td>
+                                    <p>Right drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Start of Double Drumroll</td>
+                                <td>
+                                    <p>Double drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Start of Balloon</td>
+                                <td>
+                                    <p>Balloon</p>
+                                    <p>Marks the beginning of a balloon. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Similar to the drumroll, but must be hit a certain amount within a time limit to be cleared. Balloon value is specified by the BALLOON tag.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>End of long note</td>
+                                <td>Marks the end of any long note.</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Start of Kusudama</td>
+                                <td>
+                                    <p>Large balloon</p>
+                                    <p>Marks the beginning of a kusudama. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Similar to the drumroll, but must be hit a certain amount within a time limit to be cleared. Kusudama value is specified by the BALLOON tag.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Konga Only Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I</td>
+                                <td>Start of Left Drumroll</td>
+                                <td>
+                                    <p>Left drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Becomes a small drumroll in Taiko Mode.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>H</td>
+                                <td>Start of Clap Drumroll</td>
+                                <td>
+                                    <p>Clap drumroll</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Becomes a large drumroll in Taiko Mode.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 id="miscellaneous-notes">Miscellaneous Notes</h3>
+                    <p>Listed here are miscellaneous notes used in all modes.</p>
+                    <p>These note types are not regularly used in normal charts. You'll typically only find them in gimmick charts.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>C</td>
+                                <td>Bomb</td>
+                                <td>
+                                    <p>Bomb note</p>
+                                    <p>A note that players should actively avoid hitting. Breaks combo and drastically drops gauge if hit.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>Adlib</td>
+                                <td>
+                                    <p>Invisible note</p>
+                                    <p>Appears invisible by default, and is not required to be hit. If hit, a special hitsound plays.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>G</td>
+                                <td>Kadon</td>
+                                <td>
+                                    <p>Purple note</p>
+                                    <p>Requires the player to hit both don & ka. In Konga Mode, this appear as a Double note.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>Start of Fuse Roll</td>
+                                <td>
+                                    <p>Bomb balloon</p>
+                                    <p>Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.</p>
+                                    <p>Behaves similarly to Balloon, but must be broken in time. If the user fails, it will behave like a Bomb note, breaking combo and damaging their current gauge.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <h1 id="skinning">Skinning & Customization</h1>
+                <p>In addition to OpenTaiko's default skins, users are able to create their own skins.</p>
+
+                <h2 id="lua-scripting">Lua Scripting</h2>
+                <p>OpenTaiko's Lua API allows creators to further customize their skin beyond just replacing textures and sounds, allowing for more dynamic visuals without the need to modify the game's source code. While most menus can have Lua scripts, most scripts are only suited for animating backgrounds at this time. The capabilities of the Lua API are still a work in progress, and will expand in the future.</p>
+                <p>Read-only variables are also provided by OpenTaiko, allowing the creator to change the behavior of their script based on what is happening at that moment.</p>
+                <p>Some examples of what can be done with Lua include :</p>
+                <ul>
+                    <li>Being able to read the BPM, gauge percentage, go-go state, and clear status of each active player, and change how visuals are animated using these values.</li>
+                    <li>Checking what language the user is currently using, allowing for localization support for skins.</li>
+                    <li>Changing the visuals of a background depending on their Tower progress or AI battle state.</li>
+                </ul>
+
+                    <h3 id="calling-functions">Calling Functions</h3>
+                    <p>Calling Functions are commands that you send to OpenTaiko to execute a function.</p>
+                    <p>Most of these functions are related to drawing and manipulating textures that your script imports, and does not modify the game itself.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Function</th>
+                                <th>Input Type(s)</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Console Drawing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>func:DrawText(x, y, text);</td>
+                                <td>number, number, string</td>
+                                <td>Draws text using the skin's Console Font. (/Graphics/Console_Font.png)</td>
+                            </tr>
+                            <tr>
+                                <td>func:DrawNum(x, y, num);</td>
+                                <td>number, number, number</td>
+                                <td>Draws a number using the skin's Console Font. (/Graphics/Console_Font.png)</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Image Drawing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>func:AddGraph(filename);</td>
+                                <td>string</td>
+                                <td>Load an image file to be used for your script. This is mandatory for drawing functions to work on your image.</td>
+                            </tr>
+                            <tr>
+                                <td>func:DrawGraph(x, y, filename);</td>
+                                <td>number, number, string</td>
+                                <td>Draw a given image at a position.</td>
+                            </tr>
+                            <tr>
+                                <td>func:DrawGraphCenter(x, y, filename);</td>
+                                <td>number, number, string</td>
+                                <td>Draw a given image at a position, centered at the given coordinates.</td>
+                            </tr>
+                            <tr>
+                                <td>func:DrawRectGraph(x, y, rect_x, rect_y, rect_width, rect_height, filename);</td>
+                                <td>number, number, number, number, number, number, string</td>
+                                <td>
+                                    <p>Draw a given image at a position.</p>
+                                    <p>A rectangle is used to specify what portion of the image you want to draw.</p>
+                                    <p>If a rectangle goes outside the bounds of the given image, it will loop back to continue drawing. This method can be used to repeat textures.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>func:DrawGraphRectCenter(x, y, rect_x, rect_y, rect_width, rect_height, filename);</td>
+                                <td>number, number, number, number, number, number, string</td>
+                                <td>
+                                    <p>Draw a given image at a position, centered at the given coordinates.</p>
+                                    <p>A rectangle is used to specify what portion of the image you want to draw.</p>
+                                    <p>If a rectangle goes outside the bounds of the given image, it will loop back to continue drawing. This method can be used to repeat textures.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Image Manipulation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>func:SetScale(x_scale, y_scale, filename)</td>
+                                <td>number, number, string</td>
+                                <td>Set the scale of your image. 1.0 is the default value.</td>
+                            </tr>
+                            <tr>
+                                <td>func:SetRotation(rotation, filename)</td>
+                                <td>number, string</td>
+                                <td>Set the rotation of your image. Value is typically between 0 and 360.</td>
+                            </tr>
+                            <tr>
+                                <td>func:SetOpacity(opacity, filename)</td>
+                                <td>number, string</td>
+                                <td>Set the opacity of a given image. Value must be between 0 and 255.</td>
+                            </tr>
+                            <tr>
+                                <td>func:SetColor(r, g, b, filename)</td>
+                                <td>number, number, number, string</td>
+                                <td>Use a Multiply filter to recolor your image. All values must be between 0.0 and 1.0.</td>
+                            </tr>
+                            <tr>
+                                <td>func:SetBlendMode(mode, filename)</td>
+                                <td>string, string</td>
+                                <td>
+                                    <p>Specify how an image should blend into the background.</p>
+                                    <p>Blend modes available are: "Normal", "Add", "Multi" (Multiply), "Sub" (Subtract), "Screen"</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 id="receiving-functions">Receiving Functions</h3>
+                    <p>Receiving Functions are commands that OpenTaiko sends to your script.</p>
+                    <p>Some of these functions are called every frame, while others are only called when necessary. Some can also be called multiple times, mainly per player.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Function</th>
+                                <th>Input Type(s)</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">General</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function init()</td>
+                                <td>-</td>
+                                <td>Called once when the script is first loaded. This is used to initialize data, including images.</td>
+                            </tr>
+                            <tr>
+                                <td>function update()</td>
+                                <td>-</td>
+                                <td>
+                                    <p>Called once every frame. Used to calculate & update values. Temporarily stops being called if the game is paused.</p>
+                                    <p>This is always called before draw().</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>function draw()</td>
+                                <td>-</td>
+                                <td>Called once every frame. Used to manipulate and draw images.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">In-Game Only</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function clearIn(player)</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Called once when a player has reached the clear range. The player value is the player ID that has entered the clear range.</p>
+                                    <p>The player ID starts at 0 and ends at 4.</p>
+                                    <p>0 for 1P, 1 for 2P, 2 for 3P, etc.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>function clearOut(player)</td>
+                                <td>integer</td>
+                                <td>Called once when a player has dropped from the clear range. The player value is the player ID that has dropped from the clear range.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">In-Game Only (Kusudama)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function kusuIn()</td>
+                                <td>-</td>
+                                <td>Called once when a Kusudama sequence has started.</td>
+                            </tr>
+                            <tr>
+                                <td>function kusuBroke()</td>
+                                <td>-</td>
+                                <td>Called once when a Kusudama was successfully cleared.</td>
+                            </tr>
+                            <tr>
+                                <td>function kusuMiss()</td>
+                                <td>-</td>
+                                <td>Called once when a Kusudama has failed to clear before the sequence has ended.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">In-Game Only (Ending)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function update(player)</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Called every frame. Used to calculate & update values. Unlike the original function, this is called for each player ID qualified to run this script.</p>
+                                    <p>Can run multiple times in a single frame.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>function draw(player)</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Called every frame. Used to manipulate & draw images. Unlike the original function, this is called for each player ID qualified to run this script.</p>
+                                    <p>Can run multiple times in a single frame.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>function playEndAnime(player)</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Called once when a course is finished. The player value is the player ID qualified to run this script.</p>
+                                    <p>Can run multiple times in a single frame.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Results Only</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function skipAnime()</td>
+                                <td>-</td>
+                                <td>Called once when any player skips the Results Screen animation.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Song Select Only</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>function playAnime()</td>
+                                <td>-</td>
+                                <td>
+                                    <p>Called when a player on the difficulty select screen swaps between Extreme and Extra difficulty.</p>
+                                    <p>Animation duration is specified in the Skin Config files.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 id="variables">Variables</h3>
+                    <p>OpenTaiko gives variables with read-only values to get details about what's happening at that moment.</p>
+                    <p>Some details include information about what state a player is in, while others may provide detail about the gamemode status or certain application parameters.</p>
+                    <p>Because these variables are already reserved, you can not create your own variables with the same names as the ones listed below.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variable Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Application Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>fps</td>
+                                <td>decimal</td>
+                                <td>
+                                    <p>Gets the amount of time that has passed since the last frame was drawn.</p>
+                                    <p>Non-integral, valued in seconds (i.e. 0.0166666...)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>lang</td>
+                                <td>string</td>
+                                <td>
+                                    <p>Gets the current selected language as a short string format.</p>
+                                    <p>(i.e. "en", "ja", "fr", etc.)</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Player Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>playerCount</td>
+                                <td>integer</td>
+                                <td>Gets the current number of active players.</td>
+                            </tr>
+                            <tr>
+                                <td>p1IsBlue</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Gets a bool stating if Player 1 is blue. (via. selecting Right in the title menu)</p>
+                                    <p>1P only; Returns false if not blue, or if there are 2 or more players.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Player Information (In-Game)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bpm</td>
+                                <td>decimal[]</td>
+                                <td>
+                                    <p>Gets a list of numbers for each player that tell what BPM their chart is currently on.</p>
+                                    <p>Can be different for each player.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>gauge</td>
+                                <td>decimal[]</td>
+                                <td>Gets a list of numbers between 0-100 for each player that tell where the player is on the soul gauge.</td>
+                            </tr>
+                            <tr>
+                                <td>isClear</td>
+                                <td>boolean[]</td>
+                                <td>Gets a list of booleans for each player that tell if each player is clearing their course.</td>
+                            </tr>
+                            <tr>
+                                <td>gogo</td>
+                                <td>boolean[]</td>
+                                <td>Gets a list of booleans for each player that tell if Go-Go Time is currently active.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Tower Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>towerNightNum</td>
+                                <td>decimal</td>
+                                <td>
+                                    <p>Gets a number starting at 0 and going up to (but not always ending at) 1, which changes depending on how far the player has progressed through a Tower.</p>
+                                    <p>The source code determining towerNightNum's value is: Math.Min(CurrentMeasure / Math.Max(140, MaxFloorCount / 2), 1);</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">AI Battle Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>battleState</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Gets a number related to the current state of the active AI Battle, valued between -9 and 9. Default is 0.</p>
+                                    <p>Zero or higher number means the player is winning. Negative number means the AI is winning.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>battleWin</td>
+                                <td>boolean</td>
+                                <td>
+                                    <p>Gets a bool stating if the player is winning (or has won) against the AI in AI Battle.</p>
+                                    <p>Can also be used in the Results Screen menu.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            <h1 id="faq">Frequently Asked Questions</h1>
+                <p>Q: Why?</p>
+                <p>A: idk</p>
+        
+        </content>
+    </body>
+</html>
