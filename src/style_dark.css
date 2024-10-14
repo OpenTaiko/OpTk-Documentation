@@ -49,7 +49,7 @@ nav a,
 nav a:hover,
 nav a:active,
 nav a:visited {
-    color: blue;
+    color: rgb(0, 183, 255);
 }
 
 table {
