@@ -1,7 +1,23 @@
 <!DOCTYPE html>
     <head>
+        <script>
+            function toggleTheme(use_dark) {
+                localStorage.setItem("darkmode", use_dark)
+                initTheme()
+            }
+            function initTheme() {
+                let css = document.getElementById("style")
+                if (localStorage.getItem("darkmode") === 'true') {
+                    css.href = "./src/style_dark.css"
+                }
+                else {
+                    css.href = "./src/style.css"
+                }
+            }
+        </script>
+
         <title>OpenTaiko Documentation</title>
-        <link href="./src/style.css" rel="stylesheet">
+        <link href="./src/style.css" rel="stylesheet" id="style" onload="initTheme()">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body>
@@ -10,7 +26,10 @@
             <h2>Written for Version 0.6.0.0</h2>
         </header>
         <nav>
+            <button onclick="toggleTheme('false')">Light Mode</button>
+            <button onclick="toggleTheme('true')">Dark Mode</button>
             <h2>Navigation</h2>
+
                 <a href="#intro" class="h1">Introduction</a>
 
                 <a href="#general" class="h1">General</a>
@@ -352,22 +371,22 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>func:AddGraph(filename);</td>
+                                <td>func:AddGraph(filepath);</td>
                                 <td>string</td>
                                 <td>Load an image file to be used for your script. This is mandatory for drawing functions to work on your image.</td>
                             </tr>
                             <tr>
-                                <td>func:DrawGraph(x, y, filename);</td>
+                                <td>func:DrawGraph(x, y, filepath);</td>
                                 <td>number, number, string</td>
                                 <td>Draw a given image at a position.</td>
                             </tr>
                             <tr>
-                                <td>func:DrawGraphCenter(x, y, filename);</td>
+                                <td>func:DrawGraphCenter(x, y, filepath);</td>
                                 <td>number, number, string</td>
                                 <td>Draw a given image at a position, centered at the given coordinates.</td>
                             </tr>
                             <tr>
-                                <td>func:DrawRectGraph(x, y, rect_x, rect_y, rect_width, rect_height, filename);</td>
+                                <td>func:DrawRectGraph(x, y, rect_x, rect_y, rect_width, rect_height, filepath);</td>
                                 <td>number, number, number, number, number, number, string</td>
                                 <td>
                                     <p>Draw a given image at a position.</p>
@@ -376,7 +395,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>func:DrawGraphRectCenter(x, y, rect_x, rect_y, rect_width, rect_height, filename);</td>
+                                <td>func:DrawGraphRectCenter(x, y, rect_x, rect_y, rect_width, rect_height, filepath);</td>
                                 <td>number, number, number, number, number, number, string</td>
                                 <td>
                                     <p>Draw a given image at a position, centered at the given coordinates.</p>
@@ -392,27 +411,27 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>func:SetScale(x_scale, y_scale, filename)</td>
+                                <td>func:SetScale(x_scale, y_scale, filepath)</td>
                                 <td>number, number, string</td>
                                 <td>Set the scale of your image. 1.0 is the default value.</td>
                             </tr>
                             <tr>
-                                <td>func:SetRotation(rotation, filename)</td>
+                                <td>func:SetRotation(rotation, filepath)</td>
                                 <td>number, string</td>
                                 <td>Set the rotation of your image. Value is typically between 0 and 360.</td>
                             </tr>
                             <tr>
-                                <td>func:SetOpacity(opacity, filename)</td>
+                                <td>func:SetOpacity(opacity, filepath)</td>
                                 <td>number, string</td>
                                 <td>Set the opacity of a given image. Value must be between 0 and 255.</td>
                             </tr>
                             <tr>
-                                <td>func:SetColor(r, g, b, filename)</td>
+                                <td>func:SetColor(r, g, b, filepath)</td>
                                 <td>number, number, number, string</td>
                                 <td>Use a Multiply filter to recolor your image. All values must be between 0.0 and 1.0.</td>
                             </tr>
                             <tr>
-                                <td>func:SetBlendMode(mode, filename)</td>
+                                <td>func:SetBlendMode(mode, filepath)</td>
                                 <td>string, string</td>
                                 <td>
                                     <p>Specify how an image should blend into the background.</p>
@@ -583,6 +602,13 @@
                         <tbody>
                             <tr>
                                 <td>fps</td>
+                                <td>integer</td>
+                                <td>
+                                    <p>Gets the framerate of the application.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>deltaTime</td>
                                 <td>decimal</td>
                                 <td>
                                     <p>Gets the amount of time that has passed since the last frame was drawn.</p>
@@ -615,6 +641,22 @@
                                 <td>
                                     <p>Gets a bool stating if Player 1 is blue. (via. selecting Right in the title menu)</p>
                                     <p>1P only; Returns false if not blue, or if there are 2 or more players.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>characterRarities</td>
+                                <td>string[]</td>
+                                <td>
+                                    <p>Gets each player's Character rarity.</p>
+                                    <p>Possible rarities: "Poor"/"Common"/"Uncommon"/"Rare"/"Epic"/"Legendary"/"Mythical"</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>puchicharaRarities</td>
+                                <td>string[]</td>
+                                <td>
+                                    <p>Gets each player's Puchichara rarity.</p>
+                                    <p>Possible rarities: "Poor"/"Common"/"Uncommon"/"Rare"/"Epic"/"Legendary"/"Mythical"</p>
                                 </td>
                             </tr>
                         </tbody>
