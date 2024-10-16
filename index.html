@@ -23,7 +23,7 @@
     </head>
     <body>
         <header>
-            <h1>OpenTaiko Documentation</h1>
+            <h1><open>Open</open><taiko>Taiko</taiko> Documentation</h1>
             <h2>Written for Version 0.6.0.0</h2>
         </header>
         <nav>
@@ -54,19 +54,19 @@
         <content>
 
             <h1 id="intro">Introduction</h1>
-                <p>Run OpenTaiko.exe. That is the introduction.</p>
+                <p>Welcome to the OpenTaiko documentation page! Everything you see here is a work in progress, as we are still documenting the massive amount of info related to this game.</p>
 
             <h1 id="general">General</h1>
-                <p>Go to Taiko Mode.</p>
+                <p>-</p>
 
             <h1 id="gameplay">Gameplay</h1>
-                <p>Hit the drum.</p>
+                <p>-</p>
 
             <h1 id="charting">Charting</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos magnam quia veniam adipisci aliquid aliquam accusantium veritatis, iusto facilis harum maxime at unde officia atque temporibus, optio, quasi quidem aspernatur.</p>
+                <p>OpenTaiko uses the TJA format for charting songs. They can be opened with any text editor, or with a visual editor such as PeepoDrumKit. Below is a list of note types used.</p>
 
                 <h2 id="note-types">Note Types</h2>
-                <p>There are many notes supported by OpenTaiko. Some are commonly used in every chart, while others may only be exclusive to other modes, or only seen in uncommon cases.</p>
+                <p>There are many notes supported by OpenTaiko. Some are commonly used in every chart, while others appear less often. Some may also be exclusive to other modes, or have different behaviors.</p>
 
                     <h3 id="taiko-notes">Taiko Notes</h3>
                     <p>Listed here are common note types used in Taiko mode.</p>
@@ -689,6 +689,21 @@
                                 <td>gogo</td>
                                 <td>boolean[]</td>
                                 <td>Gets a list of booleans for each player that tell if Go-Go Time is currently active.</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th class="sub" colspan="3">Gameplay Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>timeStamp</td>
+                                <td>decimal</td>
+                                <td>
+                                    <p>Gets the amount of time in seconds that have passed since the chart has begun, beginning at the first measure.</p>
+                                    <p>Can be negative if the chart hasn't started yet.</p>
+                                </td>                                
                             </tr>
                         </tbody>
                         <thead>

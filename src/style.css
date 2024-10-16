@@ -1,3 +1,10 @@
+open {
+    color:#F0360F;
+}
+taiko {
+    color:#33BEF7;
+}
+
 html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -11,15 +18,17 @@ body {
     gap: 10px;
 }
 
+header, content, nav, table, th, tr, td {
+    border: 1px black solid;
+}
+
 header {
     padding: 0 10px;
-    border: 1px black solid;
     grid-area: header;
     height: 150px;
 }
 content {
     padding: 10px;
-    border: 1px black solid;
     grid-area: content;
 }
 
@@ -30,7 +39,6 @@ nav {
     
     display: block;
     padding: 10px;
-    border: 1px black solid;
     grid-area: navbar;
 }
 nav a {
@@ -53,9 +61,6 @@ nav a:visited {
 table {
     width:80%;
     text-align: center;
-}
-table, th, tr, td {
-    border: 1px black solid;
 }
 th.sub {
     padding: 15px 15px;
