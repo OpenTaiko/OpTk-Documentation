@@ -1,2 +1,4 @@
 # OpTk-Documentation
- HTML-based documentation for OpenTaiko
+Documentation for OpenTaiko
+
+Powered by [Docsify](https://docsify.js.org/#/)
