@@ -59,4 +59,4 @@ These note types are not regularly used in normal charts. You'll typically only 
 |C|Bomb|A note that players should actively avoid hitting. Breaks combo and drastically drops gauge if hit.|
 |F|Adlib|Appears invisible by default, does not affect current combo, does not add onto the player's current score, and is not required to be hit. If hit, a special hitsound plays.|
 |G|Kadon|Requires the player to hit both don & ka. In Konga Mode, this appear as a Double note.|
-|D|Start of Fuse Roll|Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.<br>Behaves similarly to Balloon, but must be broken in time. If the user fails, it will behave like a Bomb note, breaking combo and damaging their current gauge.|
+|D|Start of Fuse Roll|Marks the beginning of a drumroll. Use 0 to increase the length of the drumroll, and 8 to end the drumroll.<br>Behaves similarly to Balloon, but must be broken in time. If the user fails, it will behave like a Bomb note, breaking combo and damaging their current gauge. Fuse Roll value is specified by the `BALLOON` tag.|
